@@ -299,6 +299,11 @@ class Server(object):
     '''
     def __init__(self, listen, custom_messages=False, timeout=None):
         print "Starting server on {0}".format(listen)
+        # for backwards compatibity with gevent<=1.0
+        listen = listen.split(':')
+        listen[1] = int(listen[1])
+        listen = tuple(listen)
+
         self.impl = gevent.server.StreamServer(listen, self.handle)
         self.games = set()
         self.waiting_clients = []

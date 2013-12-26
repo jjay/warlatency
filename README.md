@@ -5,7 +5,7 @@ REQUIREMENTS
 
 Under Ubuntu:
 ```bash
-apt-get install python-gevent`
+apt-get install python-gevent
 ```
 
 Under Ubuntu using virtualenv:
